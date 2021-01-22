@@ -11,7 +11,7 @@ int main()
         two_count = 0;
         cin>>n;
         int sum = 0;
-        for(int j=n-1;j>=0;j--)
+        for(int j=n-1; j>=0; j--)
         {
             cin>>l;
             if(l==1)

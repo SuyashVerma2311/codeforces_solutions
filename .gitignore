@@ -30,3 +30,9 @@
 *.exe
 *.out
 *.app
+
+# Input and Output Files
+*.txt
+
+# Input Generator Files
+*.py

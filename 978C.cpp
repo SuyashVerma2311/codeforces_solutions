@@ -1,21 +1,27 @@
 #include <bits/stdc++.h>
 using namespace std;
-
+  
+#define ll uint64_t
+  
+void FASTIO() {ios::sync_with_stdio(0);cin.tie(0);cout.tie(0);}
+  
 int main() {
-  int n, m;
-  cin >> n >> m;
-  vector<long long> a(n);
-  for (int i = 0; i < n; i++) cin >> a[i];
-  vector<long long> b(m);
-  for (int i = 0; i < m; i++) cin >> b[i];
-  vector<long long> asum(n);
-  asum[0] = a[0];
-  for (int i = 1; i < n; i++) asum[i] = asum[i - 1] + a[i];
-  int cur = 0;
-  for (int i = 0; i < m; i++) {
-    while (b[i] > asum[cur]) cur++;
-    cout << cur + 1 << " ";
-    if (cur == 0) cout << b[i] << endl;
-    else cout << b[i] - asum[cur - 1] << endl;
-  }
+    FASTIO();
+    #ifndef ONLINE_JUDGE
+        freopen("input.txt", "r", stdin);
+        freopen("output.txt", "w", stdout);
+    #endif
+    int n,m; cin>>n>>m;
+    vector<ll> dorms, letters;
+    ll tmp;
+    while(n--) {cin>>tmp; dorms.push_back(tmp);}
+    while(m--) {cin>>tmp; letters.push_back(tmp);}
+    for(ll x: letters) {
+        ll index=0, i=0;
+        for(; i<dorms.size(); i++) {
+            index += dorms[i];
+            if(x<=index) {index=x-index+dorms[i]; break;}
+        }
+        cout<<i+1<<" "<<index<<"\n";
+    }
 }

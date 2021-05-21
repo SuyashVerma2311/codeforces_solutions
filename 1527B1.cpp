@@ -14,7 +14,7 @@ int main() {
         int n; cin>>n;
         string s; cin>>s;
         int z=0;
-        for(char c: s) z+=(c=='0');
+        for(char c:s) z+=(c=='0');
         if(z==1 || z%2==0) cout<<"BOB\n";
         else cout<<"ALICE\n";
     }

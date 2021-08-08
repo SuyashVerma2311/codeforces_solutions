@@ -36,3 +36,6 @@
 
 # Input Generator Files
 *.py
+
+# Rough Files
+rough.cpp

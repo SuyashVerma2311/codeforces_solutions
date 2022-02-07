@@ -32,6 +32,8 @@ using namespace std;
 #define max_4(a,b,c,d) max(maxi(a,b,c),d)
 #define F first
 #define S second
+#define B begin()
+#define E end()
 #define MP make_pair
 #define PB push_back
 #define PF push_front
@@ -60,21 +62,15 @@ void solve(int t) {
 	int testcases=t;
 	while(t--) {
 		int n,k; cin>>n>>k;
-		bool done = true;
-		if(k==1)
-			done = false;
-		else if(n%2==0)
-			done = false;
-		if(done)
-			cout<<"NO"<<endl;
-		else {
-			cout<<"YES"<<endl;
-			for(int j=1; j<=n; j++) {
-				for(int i=0; i<k; i++)
-					cout<<n*i+j<<" ";
-				cout<<endl;
-			}
-		}
+		string s; cin>>s;
+
+		string rev = s;
+		reverse(rev.B,rev.E);
+
+		if(k == 0 || rev==s)
+			cout<<"1"<<endl;
+		else
+			cout<<"2"<<endl;
 	}
 }
 

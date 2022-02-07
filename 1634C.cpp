@@ -87,4 +87,4 @@ main() {
 	int t=1; cin>>t;
 	solve(t);
 	return 0;
-}
+}''
